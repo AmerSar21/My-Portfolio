@@ -1,0 +1,73 @@
+.techstack {
+  padding: 0 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.techstack::before,
+.techstack::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.techstack::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.techstack::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.techstack-label {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 20px;
+  white-space: nowrap;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.tech-chip:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-2);
+}
+
+.tech-icon { font-size: 16px; }
+
+.tech-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
